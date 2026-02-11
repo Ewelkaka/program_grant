@@ -1,0 +1,25 @@
+use solana_program::{
+    account_info::AccountInfo,
+    entrypoint,
+    entrypoint::ProgramResult,
+    msg,
+    pubkey::Pubkey,
+};
+
+// Punkt wejścia - to tutaj sieć Solana zaczyna czytać Twój program
+entrypoint!(process_instruction);
+
+pub fn process_instruction(
+    program_id: &Pubkey,
+    _accounts: &[AccountInfo],
+    _instruction_data: &[u8],
+) -> ProgramResult {
+    // Te wiadomości pojawią się w Explorerze Solany
+    msg!("--- PROJEKT POD GRANT SOLANA FOUNDATION ---");
+    msg!("Status: Aktywny");
+    msg!("Twórca: Ewelina Lesiak");
+    msg!("Wiadomość: Buduję na Solanie przy użyciu Heliusa.");
+    msg!("Program ID tego kontraktu: {}", program_id);
+
+    Ok(())
+}
