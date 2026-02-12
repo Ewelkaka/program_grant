@@ -1,16 +1,10 @@
 [package]
-name = "solana_grant_project"
+name = "program_grant"
 version = "0.1.0"
 edition = "2021"
 
+[dependencies]
+solana-program = "=1.17.0"
+
 [lib]
 crate-type = ["cdylib", "lib"]
-
-[dependencies]
-solana-program = "=1.18.26"
-borsh = "=0.10.3"
-
-[profile.release]
-overflow-checks = true
-lto = "fat"
-codegen-units = 1
