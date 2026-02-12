@@ -1,24 +1,17 @@
-const { Connection, PublicKey, Keypair } = require("@solana/web3.js");
 const fs = require('fs');
 
-// Ładowanie Twojego portfela (upewnij się, że ścieżka jest poprawna)
-const secret = JSON.parse(fs.readFileSync('/home/ewelinalesiak7/.config/solana/id.json'));
-const payer = Keypair.fromSecretKey(Uint8Array.from(secret));
+const branding = {
+    name: "Ewelina Emerald Coin",
+    symbol: "EWE",
+    image: "https://raw.githubusercontent.com/Ewelkaka/moj-projekt/main/logo.png",
+    external_url: "https://github.com/Ewelkaka/moj-projekt",
+    description: "Official Branding for Ewelina Emerald Coin"
+};
 
-const connection = new Connection("https://api.devnet.solana.com", "confirmed");
-const MINT_ADDRESS = new PublicKey("4Fa7RAs3RnPtyBDWjPbNP8N162ip4Wp38rnxcJLoTsjQ");
+console.log("--- AKTUALIZACJA BRANDINGU ---");
+console.log("Nazwa:", branding.name);
+console.log("Logo URL:", branding.image);
 
-async function prepareMetadata() {
-    console.log("💎 INICJACJA BRANDINGU: Ewelina Emerald Coin");
-    console.log("------------------------------------------");
-    console.log(`Portfel właściciela: ${payer.publicKey.toBase58()}`);
-    console.log(`Token do aktualizacji: ${MINT_ADDRESS.toBase58()}`);
-    
-    // Tu zdefiniujemy link do Twojego logo (może to być GitHub Raw)
-    const metadataUri = "https://raw.githubusercontent.com/Ewelkaka/moj-projekt/main/metadata.json";
-    
-    console.log(`\nLink do metadanych ustawiony na: ${metadataUri}`);
-    console.log("Status: Gotowy do wstrzyknięcia w Metaplex Program.");
-}
-
-prepareMetadata();
+// Zapisywanie do pliku konfiguracyjnego dla dashboardu
+fs.writeFileSync('./branding_config.json', JSON.stringify(branding, null, 2));
+console.log("Plik branding_config.json został zaktualizowany.");
