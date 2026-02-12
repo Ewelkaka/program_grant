@@ -1,0 +1,21 @@
+{
+  "name": "Ewelina Emerald Coin",
+  "symbol": "EWE",
+  "description": "The official token of Ewelina. Backed by emerald energy.",
+  "image": "https://raw.githubusercontent.com/Ewelkaka/moj-projekt/main/logo.png",
+  "attributes": [
+    {
+      "trait_type": "Founder",
+      "value": "Ewelina"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://raw.githubusercontent.com/Ewelkaka/moj-projekt/main/logo.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}
