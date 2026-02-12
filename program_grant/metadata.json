@@ -1,0 +1,10 @@
+{
+  "name": "Ewelina Emerald Coin",
+  "symbol": "EWE",
+  "description": "The most secure emerald-backed asset on Solana ecosystem.",
+  "image": "https://raw.githubusercontent.com/Ewelkaka/moj-projekt/main/logo.png",
+  "attributes": [
+    { "trait_type": "Security", "value": "Institutional" },
+    { "trait_type": "Mint", "value": "Revoked" }
+  ]
+}
